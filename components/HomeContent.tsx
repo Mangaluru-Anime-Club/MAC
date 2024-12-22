@@ -8,7 +8,8 @@ import {
 } from "@/components/ui/card";
 import Link from "next/link";
 import { Post } from "@/types/post";
-
+import "components/homeComponent.css";
+import Image from "next/image";
 export function HomeContent() {
   const posts = getAllPosts();
 
@@ -48,22 +49,25 @@ export function HomeContent() {
     // </div>
     <div className="min-h-screen" style={{ backgroundColor: "#0D0D0E" }}>
       <div className="upperDiv">
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            flexDirection: "column",
-            color: "#FF0004",
-            paddingTop: "1rem",
-          }}
-        >
+        <div className="center">
           <h1>Welcome</h1>
           <h3>ಸುಸ್ವಾಗತ - ようこそ</h3>
         </div>
       </div>
-      <div className="centerDiv"></div>
-      <div className="lowerDiv"></div>
+      <div className="centerDiv center">
+        <Image
+          src="/images/luffy.png"
+          width={500}
+          height={500}
+          alt="Picture of Luffy"
+        />
+      </div>
+      <div className="lowerDiv">
+        <div className="center">
+          <h1>mangaluru anime club</h1>
+          <p>ಮಂಗಳೂರು ಅನಿಮೆ ಕ್ಲಬ್ - マンガルル アニメ クラブ</p>
+        </div>
+      </div>
     </div>
   );
 }
