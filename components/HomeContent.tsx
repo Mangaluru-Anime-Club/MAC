@@ -50,7 +50,7 @@ export function HomeContent() {
     <div className="min-h-screen" style={{ backgroundColor: "#0D0D0E" }}>
       <div className="upperDiv">
         <div className="center">
-          <h1>Welcome</h1>
+          <h1 style={{ fontSize: "2rem" }}>Welcome</h1>
           <h3 style={{ color: "#6C757D" }}>ಸುಸ್ವಾಗತ - ようこそ</h3>
         </div>
       </div>
