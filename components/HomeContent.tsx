@@ -51,7 +51,7 @@ export function HomeContent() {
       <div className="upperDiv">
         <div className="center">
           <h1>Welcome</h1>
-          <h3>ಸುಸ್ವಾಗತ - ようこそ</h3>
+          <h3 style={{ color: "#6C757D" }}>ಸುಸ್ವಾಗತ - ようこそ</h3>
         </div>
       </div>
       <div className="centerDiv center">
@@ -64,8 +64,10 @@ export function HomeContent() {
       </div>
       <div className="lowerDiv">
         <div className="center">
-          <h1>mangaluru anime club</h1>
-          <p>ಮಂಗಳೂರು ಅನಿಮೆ ಕ್ಲಬ್ - マンガルル アニメ クラブ</p>
+          <h1 style={{ fontSize: "2.5rem" }}>mangaluru anime club</h1>
+          <p style={{ color: "#6C757D" }}>
+            ಮಂಗಳೂರು ಅನಿಮೆ ಕ್ಲಬ್ - マンガルル アニメ クラブ
+          </p>
         </div>
       </div>
     </div>
