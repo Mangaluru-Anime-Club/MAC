@@ -1,44 +1,92 @@
-import { getAllPosts } from '@/lib/posts'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import Link from 'next/link'
-import { Post } from '@/types/post'
+"use client";
+
+import "@/components/homeComponent.css";
+import Image from "next/image";
+import Link from "next/link";
 
 export function HomeContent() {
-  const posts = getAllPosts()
-
   return (
-    <div className="min-h-screen">
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-6xl font-bold text-center mb-8">MAC</h1>
-          <h2 className="text-3xl font-bold text-center mb-8">Mangalore Anime Club</h2>
+    <div className="min-h-screen bg-[#0D0D0E]">
+      <div className="upperDiv">
+        <div className="center">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl">Welcome</h1>
+          <h3 className="text-[#6C757D]">ಸುಸ್ವಾಗತ - ようこそ</h3>
+        </div>
+      </div>
+      <div className="centerDiv center">
+        <div className="relative">
+          <Link href="/">
+            <Image
+              src="/images/kunai-home.png"
+              width={500}
+              height={500}
+              alt="Kunai"
+              className={`
+                absolute cursor-pointer
+                top-[-70px] left-[-150px]
+                md:top-[-140px] md:left-[-300px]
+              `}
+            />
+          </Link>
+          <Link href="/recommendations">
+            <Image
+              src="/images/kunai-rec.png"
+              width={500}
+              height={500}
+              alt="Kunai"
+              className={`
+                absolute cursor-pointer
+                top-[-70px] right-[-150px]
+                md:top-[-140px] md:right-[-300px]
+              `}
+            />
+          </Link>
 
-          <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+          <Link href="/contact">
+            <Image
+              src="/images/kunai-contact.png"
+              width={500}
+              height={500}
+              alt="Kunai"
+              className={`
+                absolute cursor-pointer
+                bottom-[-70px] left-[-150px]
+                md:bottom-[-140px] md:left-[-300px]
+              `}
+            />
+          </Link>
+          <Link href="/admin">
+            <Image
+              src="/images/kunai-admin.png"
+              width={500}
+              height={500}
+              alt="Kunai"
+              className={`
+                absolute cursor-pointer
+                bottom-[-70px] right-[-150px]
+                md:bottom-[-140px] md:right-[-300px]
+              `}
+            />
+          </Link>
+
+          <Image
+            src="/images/luffy.png"
+            width={500}
+            height={500}
+            alt="Picture of Luffy"
+          />
+        </div>
+      </div>
+      <div className="lowerDiv">
+        <div className="center">
+          <h1 className="text-3xl sm:text-2xl md:text-3xl lg:text-4xl">
+            mangaluru anime club
+          </h1>
+          <p className="text-sm sm:text-base md:text-lg text-[#6C757D]">
+            ಮಂಗಳೂರು ಅನಿಮೆ ಕ್ಲಬ್ - マンガルル アニメ クラブ
           </p>
         </div>
-      </section>
-
-      <section className="py-16">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-8">Recent Blog Posts</h2>
-          <div className="grid gap-3">
-            {posts.map((post: Post) => (
-              <Link href={`/posts/${post.id}`} key={post.id}>
-                <Card className="bg-white-500 shadow-md border rounded-lg">
-                  <CardHeader className='text-blue-600'>
-                    <CardTitle >{post.title}</CardTitle>
-                    <CardDescription className='text-blue-600'>{post.date}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-blue-600">{post.excerpt}</p>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
-  )
+  );
 }
